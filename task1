@@ -1,0 +1,60 @@
+package atm;
+
+import java.util.Scanner;
+
+import Bank.Bank;
+
+public class Atm_interface {
+		public static void main(String[] args) {
+			int bal=1000; 
+			int bal2 = 0;
+			int bal3=0;
+			
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter user name : ");
+			int uname = sc.nextInt();
+			int password;
+			System.out.println("Enter your password : ");
+			password = sc.nextInt();
+	
+			if(uname== 1111 && password == 1212)
+			{
+			 for(;;)
+			 {
+				 System.out.println("1. withdraw 2. deposite 3 .checkBalance 4. trasition histry  5.Exit");
+				 switch(sc.nextInt())
+				 {
+				 case 1: System.out.println("enter money to withdraw");
+				 int withdraw=sc.nextInt();
+					if(bal>=withdraw){
+						bal3=bal-withdraw;
+						bal =bal3;
+						System.err.println("your money has been succesfully withdraw :");
+					}
+					else
+						System.err.println("insufficient balance");
+					 break;
+				 case 2: System.out.println("enter money to be deposite");
+					int deposite=sc.nextInt();
+					bal2= bal+deposite;
+					bal=bal2;
+					System.err.println("your money has been succesfully deposited : ");
+					 break;
+				 case 3 : System.out.println("your balance is :" +bal);
+				 break;
+				 case 4: System.out.println("privious transaction");
+				 System.out.println("deposited : " + bal2);
+				 System.out.println("withdraw amount : "+ bal3);
+				 System.out.println("total your account balance :" +bal);
+				 break;
+				 case 5 :System.exit(0);
+				 }
+			 }
+			}
+			else 
+			{
+				System.err.println("invalid user !!");
+			}
+			
+		}
+}
